@@ -1,13 +1,30 @@
-const heading = React.createElement(
-    "h1",
-    {
-        id : "heading"
+const parent = React.createElement(
+    "div", {
+        id: "parent"
     },
-    "Hello from React"
-);
+    React.createElement(
+        "div", {
+            id: "child"
+        },
+        [
+            React.createElement(
+                "h1", {
+                    id: "heading1"
+                },
+                "H1 tag"
+            ),
+            React.createElement(
+                "h2", {
+                    id: "heading2E"
+                },
+                "H2 tag"
+            )
+        ]
+    )
+)
 
-console.log(heading)
+console.log(parent)
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(heading)
+root.render(parent)
