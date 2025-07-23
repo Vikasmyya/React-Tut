@@ -1,0 +1,22 @@
+{
+  "name": "react-tut",
+  "version": "1.0.0",
+  "description": "React Tutorial",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vikasmyya/React-Tut.git"
+  },
+  "author": "Vikas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vikasmyya/React-Tut/issues"
+  },
+  "homepage": "https://github.com/Vikasmyya/React-Tut#readme",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  }
+}
