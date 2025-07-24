@@ -23,7 +23,7 @@
 .res-card {
   width: 150px;
   border: 1px solid black;
-  align-items: center;
+  justify-content: center;
 }
 
 .res-container {
@@ -39,6 +39,6 @@
 
 .res-logo {
   width: 100%;
-  height: 100px; /* or whatever fits */
+  height: 150px; /* or whatever fits */
   object-fit: cover; /* Crop & cover container */
 }
