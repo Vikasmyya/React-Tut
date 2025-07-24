@@ -20,6 +20,13 @@ const HeadingComponent2 = () => (
   </div>
 );
 
+//Adding react element
+const HeadingComponent4 = () => (
+  <div>
+    <h2>{jsxHeading}</h2>
+    <h1>Hello from complonent3</h1>
+  </div>
+);
 console.log(jsxHeading);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
