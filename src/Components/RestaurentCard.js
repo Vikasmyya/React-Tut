@@ -1,16 +1,12 @@
 import { CDN_URL } from "../Utils/constants";
 
-const inlinneStyle = {
-  backgroundColor: "#f0f0f0",
-};
-
 const RestaurentCard = (props) => {
   const { resData } = props;
   const { cloudinaryImageId, name, cuisines, avgRating, costForTwo } =
     resData?.info;
   const { deliveryTime } = resData?.info?.sla;
   return (
-    <div className="res-card" style={inlinneStyle}>
+    <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
       <img
         className="res-logo"
         alt="res-logo"
