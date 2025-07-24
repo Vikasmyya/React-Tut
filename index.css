@@ -1,3 +1,44 @@
-#heading{
-    color: red;
+.header {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+}
+
+.logo {
+  width: 120px;
+}
+
+.nav-items > ul {
+  display: flex;
+  list-style-type: none;
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.nav-items > ul > li {
+  padding: 10px;
+  margin: 10px;
+}
+
+.res-card {
+  width: 150px;
+  border: 1px solid black;
+  justify-content: center;
+}
+
+.res-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* spacing between cards */
+  margin: 10px; /* spacing around the whole container */
+}
+
+.search {
+  padding: 10px;
+}
+
+.res-logo {
+  width: 100%;
+  height: 150px; /* or whatever fits */
+  object-fit: cover; /* Crop & cover container */
 }
