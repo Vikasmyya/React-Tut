@@ -1,28 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-const Headder = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          className="logo"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4BdwR2X16RrHC8QyJ5NXEZh83oY65HMqjBg&s"
-        ></img>
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contatct Us</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-const resObj = [
+const resList = [
   {
     "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
     info: {
@@ -710,56 +686,4 @@ const resObj = [
   },
 ];
 
-const inlinneStyle = {
-  backgroundColor: "#f0f0f0",
-};
-
-const RestaurentCard = (props) => {
-  const { resData } = props;
-  const { cloudinaryImageId, name, cuisines, avgRating, costForTwo } =
-    resData?.info;
-  const { deliveryTime } = resData?.info?.sla;
-  return (
-    <div className="res-card" style={inlinneStyle}>
-      <img
-        className="res-logo"
-        alt="res-logo"
-        src={
-          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-          cloudinaryImageId
-        }
-      ></img>
-      <h3>{name}</h3>
-      <h4>{cuisines.join(", ")}</h4>
-      <h4>{avgRating}</h4>
-      <h4>{costForTwo}</h4>
-      <h4>{deliveryTime} minutes</h4>
-    </div>
-  );
-};
-
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="search">Search</div>
-      <div className="res-container">
-        {resObj.map((restuarent) => (
-          <RestaurentCard key={restuarent.info.id} resData={restuarent} />
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const AppLayout = () => {
-  return (
-    <div className="app">
-      <Headder />
-      <Body />
-    </div>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(<AppLayout />);
+export default resList;
