@@ -17,8 +17,7 @@ class Contact extends Component {
     return (
       <div className="user-list">
         <h1>Contact Us</h1>
-        <UserClass name={"Vikas from 2st class"} />
-        <UserClass name={"Vikas from 1st class"} />
+        <UserClass />
       </div>
     );
   }
