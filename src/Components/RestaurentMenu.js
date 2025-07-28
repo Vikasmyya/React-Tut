@@ -8,6 +8,7 @@ const RestaurentMenu = () => {
   const { resId } = useParams();
 
   const restaurentMenu = useRestaurantMenu(resId);
+  console.log(restaurentMenu);
 
   if (restaurentMenu === null) {
     return <Shimmmer />;
