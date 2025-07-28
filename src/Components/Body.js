@@ -1,4 +1,4 @@
-import RestaurentCard from "./RestaurentCard";
+import RestaurentCard, { WithLabelPromoted } from "./RestaurentCard";
 import { useState, useEffect } from "react";
 import Shimmmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -27,6 +27,7 @@ const Body = () => {
     );
   };
 
+  const RestauantPramoted = WithLabelPromoted(RestaurentCard);
   const onlineStatus = useOnlineStatus();
 
   if (onlineStatus == false) {
@@ -80,7 +81,11 @@ const Body = () => {
             key={restuarent.info.id}
             to={"/restaurent/" + restuarent.info.id}
           >
-            <RestaurentCard resData={restuarent} />
+            {restuarent.info.id % 2 == 0 ? (
+              <RestauantPramoted resData={restuarent} />
+            ) : (
+              <RestaurentCard resData={restuarent} />
+            )}
           </Link>
         ))}
       </div>
