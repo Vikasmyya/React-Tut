@@ -5,13 +5,13 @@ import useOnlineStatus from "../Utils/useOnlineStatus";
 const Header = () => {
   const onlineStatus = useOnlineStatus();
   return (
-    <div className="header">
+    <div className="flex justify-between bg-green-300 m-2 shadow-lg">
       <div className="logo-container">
-        <img className="logo" src={LOGO_URL}></img>
+        <img className="w-35" src={LOGO_URL}></img>
       </div>
-      <div className="nav-items">
-        <ul>
-          <li>
+      <div className="flex justify-center-safe">
+        <ul className="flex items-center mr-5">
+          <li className="px-5">
             Online Status:{" "}
             {onlineStatus ? (
               <span
@@ -35,16 +35,16 @@ const Header = () => {
               />
             )}
           </li>
-          <li>
+          <li className="px-5">
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li className="px-5">
             <Link to="/about">About</Link>
           </li>
-          <li>
+          <li className="px-5">
             <Link to="/contact">Contatct Us</Link>
           </li>
-          <li>Cart</li>
+          <li className="px-5">Cart</li>
         </ul>
       </div>
     </div>

@@ -22,16 +22,20 @@ const RestaurentMenu = () => {
       ?.card?.card;
 
   return (
-    <div>
-      <h1>{name}</h1>
+    <div className="p-10">
+      <h1 className="font-bold my-5 text-xl">{name}</h1>
       <p>{cuisines.join(", ")}</p>
       <h3>{avgRatingString}</h3>
       <h4>{costForTwoMessage}</h4>
       <div className="menu-list">
-        <h2>Menu</h2>
+        <h2 className="font-bold text-lg mt-2">Menu</h2>
         <ul>
           {itemCards.map((menu) => {
-            return <li key={menu?.card?.info?.id}>{menu?.card?.info?.name}</li>;
+            return (
+              <li className="list-disc mx-10" key={menu?.card?.info?.id}>
+                {menu?.card?.info?.name}
+              </li>
+            );
           })}
         </ul>
       </div>
