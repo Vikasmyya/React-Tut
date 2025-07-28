@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Shimmmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { RES_URL } from "../Utils/constants";
+import useOnlineStatus from "../Utils/useOnlineStatus";
 
 const Body = () => {
   const [listofRes, setlistofRes] = useState([]);
@@ -25,6 +26,12 @@ const Body = () => {
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
+
+  const onlineStatus = useOnlineStatus();
+
+  if (onlineStatus == false) {
+    return <h1>Please check the internet connection</h1>;
+  }
 
   //Conditional rendering
   return listofRes.length === 0 ? (
