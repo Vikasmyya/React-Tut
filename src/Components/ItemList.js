@@ -1,9 +1,19 @@
+import { useDispatch } from "react-redux";
 import { CDN_URL } from "../Utils/constants";
+import { addItem } from "../Utils/cartSlice";
 
 const ItemList = (props) => {
+  console.log(props);
+  const dispatch = useDispatch();
+  const handleAddItems = (item) => {
+    dispatch(addItem(item));
+  };
+
+  const items = props.data.itemCards || props.data || [];
+
   return (
     <div>
-      {props.data.itemCards.map((item) => {
+      {items.map((item) => {
         const price =
           item.card.info.price != null
             ? item.card.info.price / 100
@@ -25,7 +35,10 @@ const ItemList = (props) => {
                 src={CDN_URL + item.card.info.imageId}
                 alt={item.card.info.name}
               />
-              <button className="p-1 px-2 bg-white border rounded shadow text-xs">
+              <button
+                className="p-1 px-2 bg-white border rounded shadow text-xs"
+                onClick={() => handleAddItems(item)}
+              >
                 Add+
               </button>
             </div>

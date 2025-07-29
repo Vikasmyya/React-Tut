@@ -42,13 +42,13 @@ class UserClass extends React.Component {
       <div className="user">
         <img src={avatar_url} />
         <div>
-          <h2>
+          <div>
             <UserContext.Consumer>
               {({ loggedinUser }) => {
                 return <h2>{loggedinUser}</h2>;
               }}
             </UserContext.Consumer>
-          </h2>
+          </div>
         </div>
 
         <h2>Name: {login}</h2>
