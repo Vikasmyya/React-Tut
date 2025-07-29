@@ -1,14 +1,17 @@
 import RestaurentCard, { WithLabelPromoted } from "./RestaurentCard";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Shimmmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { RES_URL } from "../Utils/constants";
 import useOnlineStatus from "../Utils/useOnlineStatus";
+import UserContext from "../Utils/UserContext";
 
 const Body = () => {
   const [listofRes, setlistofRes] = useState([]);
   const [filteredListofRes, setfilteredListofRes] = useState([]);
   const [searchText, stSearchText] = useState("");
+
+  const { userName, setuserName } = useContext(UserContext);
 
   useEffect(() => {
     fetchData();
@@ -73,6 +76,16 @@ const Body = () => {
           >
             Top rated restuarent
           </button>
+        </div>
+        <div>
+          <input
+            type="text"
+            className="border border-solid border-black ml-4 my-5 p-2"
+            value={userName}
+            onChange={(e) => {
+              setuserName(e.target.value);
+            }}
+          ></input>
         </div>
       </div>
       <div className="flex flex-wrap">

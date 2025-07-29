@@ -1,9 +1,14 @@
 import { LOGO_URL } from "../Utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../Utils/useOnlineStatus";
+import UserContext from "../Utils/UserContext";
+import { useContext } from "react";
 
 const Header = () => {
   const onlineStatus = useOnlineStatus();
+
+  const { loggedinUser } = useContext(UserContext);
+  console.log(loggedinUser);
   return (
     <div className="flex justify-between bg-green-300 m-2 shadow-lg">
       <div className="logo-container">
@@ -45,6 +50,7 @@ const Header = () => {
             <Link to="/contact">Contatct Us</Link>
           </li>
           <li className="px-5">Cart</li>
+          <li className="px-4 font-bold">{loggedinUser}</li>
         </ul>
       </div>
     </div>
